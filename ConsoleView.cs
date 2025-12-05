@@ -253,7 +253,7 @@ namespace Ousiron.Console
             editor.OnFocus();
             editor.MoveTextEnd();
             editor.selectIndex =
-                0; //cursor selected end position… it will selecting the text from 0 to 56 (cursorindex)
+                0; //cursor selected end positionï¿½ it will selecting the text from 0 to 56 (cursorindex)
         }
 
         public void SetPredictionList(List<string> list)
@@ -313,9 +313,6 @@ namespace Ousiron.Console
 
         private void ShowConsoleBody()
         {
-            // var viewport = new Rect(_leftRightBorderWidth, 0, Screen.width - _leftRightBorderWidth * 2 - 20,
-            //     _predictionWindowRecordHeight * _logs.Count - _textFieldHeight - 10);
-
             GUI.SetNextControlName("scroll");
             _scroll = GUILayout.BeginScrollView(
                 _scroll,
