@@ -4,21 +4,9 @@ using UnityEngine;
 
 namespace Ousiron.Console
 {
-    public class LogView
+    public class GUIConsoleView : MonoBehaviour, IConsoleView
     {
-        public string LogText { get; }
-        public Color Color { get; }
-
-        public LogView(string logText, Color color)
-        {
-            this.LogText = logText;
-            this.Color = color;
-        }
-    }
-
-    public class ConsoleView : MonoBehaviour
-    {
-        public bool IsEnabled { get; private set; } = false;
+        public bool IsEnabled { get; set; } = false;
 
         [SerializeField] private int _consoleCapacity = 150;
         [SerializeField] private int _maxPredictionListCount = 10;
@@ -71,14 +59,33 @@ namespace Ousiron.Console
 
             ARROW_DOWN = '\u25bc'.ToString();
             ARROW_UP = '\u25b2'.ToString();
-            
+        }
+
+        public void ClearPredictionList()
+        {
+            PredictionList.Clear();
+        }
+
+        public string GetPrediction(int id)
+        {
+            return PredictionList[id];
+        }
+
+        public int GetPredictionsCount()
+        {
+            return PredictionList.Count;
+        }
+
+        public void SetSelectedPredictedCommandID(int id)
+        {
+            SelectedPredictedCommandID = id;
         }
 
         private void OnGUI()
         {
             if (!IsEnabled)
                 return;
-                
+
             GUI.skin.settings.selectionColor = Color.red;
 
             var h = Screen.height;

@@ -1,0 +1,12 @@
+{
+  "name": "com.ousiron.console",
+  "displayName": "Console",
+  "version": "1.0.0",
+  "unity": "6000.3",
+  "unityRelease": "15f1",
+  "description": "Console for any porposes",
+  "author": {
+    "name": "senawa",
+    "email": "senawaprod@gmail.com"
+  }
+}
