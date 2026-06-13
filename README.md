@@ -1,1 +1,1 @@
-Use this file to describe your package's features.
+Usefull console for unity. Editor/Build ready.
